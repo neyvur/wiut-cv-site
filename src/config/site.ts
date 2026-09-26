@@ -15,7 +15,7 @@ export const TASK_NAME = "Computer Vision · Elimination Task";
 export const PROJECT_NAME =
   "Toyota Traffic Event Detection and Accident Anticipation from a Fixed Road Camera";
 
-export const TEAM_NAME = "[TEAM NAME]";
+export const TEAM_NAME = "GAMA Core";
 
 export const LINKS = {
   github: "https://github.com/neyvur/traffic-video-analysis",
@@ -25,43 +25,48 @@ export const LINKS = {
 
 export const TEAM_MEMBERS: TeamMember[] = [
   {
-    name: "[MEMBER 1]",
-    role: "[ROLE]",
-    bio: "[SHORT DESCRIPTION]",
-    github: "[GITHUB]",
-    linkedin: "[LINKEDIN]",
-    portfolio: "[PORTFOLIO]",
-    contributions: ["[CONTRIBUTION 1]", "[CONTRIBUTION 2]"],
+    name: "Abdukhalilov Abdulkhamid",
+    role: "Lead / Backend",
+    bio: "Team lead and primary author of the solution. Built the complete end-to-end pipeline — YOLO detection, ByteTrack tracking, rule-based event engine, traffic-light HSV analysis, risk estimation, FastAPI backend and cloud deployment.",
+    github: "https://github.com/neyvur",
+    linkedin: "https://www.linkedin.com/in/abdulkhamid-abdukhalilov-033b65334?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    contributions: ["End-to-end pipeline: detection → tracking → rules → events",
+      "Rules engine, events detector, risk estimator",
+      "FastAPI backend + Docker + Railway deployment",
+      "Frontend integration & Live Demo",],
   },
   {
-    name: "[MEMBER 2]",
-    role: "[ROLE]",
-    bio: "[SHORT DESCRIPTION]",
-    github: "[GITHUB]",
+    name: "Asqarov Mumin",
+    role: "System Architect · Planner",
+    bio: "Designed the overall system skeleton and project plan. Defined the module structure, data flow between components, and the interface between the detection pipeline and the event logic. Wrote the initial scaffolding that the team built upon.",
+    github: "https://github.com/MuminAskarov",
     linkedin: "[LINKEDIN]",
-    portfolio: "[PORTFOLIO]",
-    contributions: ["[CONTRIBUTION 1]", "[CONTRIBUTION 2]"],
+    contributions: ["System architecture and module boundaries",
+      "Initial project skeleton and interfaces",
+      "Task breakdown and technical roadmap",],
   },
   {
-    name: "[MEMBER 3]",
-    role: "[ROLE]",
-    bio: "[SHORT DESCRIPTION]",
-    github: "[GITHUB]",
+    name: "Gulzora Shokirjonova",
+    role: "Researcher · Data & Evaluation",
+    bio: "Conducted research on traffic-event detection approaches, reference models and evaluation metrics. Prepared zone annotations, curated the sample videos, and defined the temporal-IoU evaluation protocol used to measure the system.",
+    github: "https://github.com/shokirjonovagulzora11",
     linkedin: "[LINKEDIN]",
-    portfolio: "[PORTFOLIO]",
-    contributions: ["[CONTRIBUTION 1]", "[CONTRIBUTION 2]"],
+    contributions: ["Research on detection & tracking approaches",
+      "Zone annotation and video curation",
+      "Evaluation protocol (temporal IoU)",
+      "EDA and result analysis",],
   },
 ];
 
 export const TECH_STACK = {
-  detector: "[DETECTOR]",
-  tracker: "[TRACKER]",
-  accidentModel: "[ACCIDENT MODEL]",
-  backend: "[BACKEND]",
+  detector: "YOLOv8n (COCO)",
+  tracker: "ByteTrack",
+  accidentModel: "Rule-based (IoU + velocity + trajectory)",
+  backend: "FastAPI · Docker · Railway",
   frontend: "Next.js · React · TypeScript · Tailwind CSS",
-  database: "[DATABASE]",
-  languages: ["Python", "[LANGUAGE]"],
-  libraries: ["OpenCV", "PyTorch", "[LIBRARY]"],
+  database: "—",
+  languages: ["Python", "TypeScript"],
+  libraries: ["OpenCV", "PyTorch", "Ultralytics", "FastAPI", "NumPy"],
 };
 
 export const DATASETS_NOTE = "[DATASETS]";
