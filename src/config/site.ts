@@ -257,17 +257,6 @@ export const REPORT_SECTIONS = [
   "Future Work",
 ];
 
-export const REPO_STRUCTURE = [
-  "solution.py",
-  "run_submission.py",
-  "evaluate.py",
-  "requirements.txt",
-  "weights/",
-  "src/",
-  "notebooks/",
-  "predictions_samples.json",
-  "README.md",
-];
 
 export const REPO_STRUCTURE = [
   "solution.py             # detect_events() entry point",
@@ -287,3 +276,13 @@ export const REPO_STRUCTURE = [
 
 /** Number of sample videos to render placeholder analysis cards for. */
 export const SAMPLE_VIDEO_COUNT = 3;
+
+
+export const NAV_ITEMS = [
+  { label: "Home", href: "#home" },
+  { label: "Live Demo", href: "#live-demo" },
+  { label: "Approach", href: "#approach" },
+  { label: "EDA", href: "#eda" },
+  { label: "Results", href: "#results" },
+  { label: "Team", href: "#team" },
+];
