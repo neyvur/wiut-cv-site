@@ -50,7 +50,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: "Researcher · Data & Evaluation",
     bio: "Conducted research on traffic-event detection approaches, reference models and evaluation metrics. Prepared zone annotations, curated the sample videos, and defined the temporal-IoU evaluation protocol used to measure the system.",
     github: "https://github.com/shokirjonovagulzora11",
-    linkedin: "[LINKEDIN]",
+    linkedin: "https://www.linkedin.com/in/gulzora-shokirjonova-24447939b?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     contributions: ["Research on detection & tracking approaches",
       "Zone annotation and video curation",
       "Evaluation protocol (temporal IoU)",
