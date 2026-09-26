@@ -40,7 +40,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: "System Architect · Planner",
     bio: "Designed the overall system skeleton and project plan. Defined the module structure, data flow between components, and the interface between the detection pipeline and the event logic. Wrote the initial scaffolding that the team built upon.",
     github: "https://github.com/MuminAskarov",
-    linkedin: "[LINKEDIN]",
+    linkedin: "https://uz.linkedin.com/in/mumin-askarov-9697763b5",
     contributions: ["System architecture and module boundaries",
       "Initial project skeleton and interfaces",
       "Task breakdown and technical roadmap",],
