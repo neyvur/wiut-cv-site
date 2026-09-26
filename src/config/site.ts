@@ -19,8 +19,8 @@ export const TEAM_NAME = "[TEAM NAME]";
 
 export const LINKS = {
   github: "https://github.com/neyvur/traffic-video-analysis",
-  website: "http://localhost:3000",
-  demoApi: "https://traffic-video-analysis-production-d206.up.railway.app",
+  website: "https://wiut-cv-site-mnyjxya8d-gama-core.vercel.app",
+  demoApi: "https://traffic-video-analysis-production.up.railway.app",
 };
 
 export const TEAM_MEMBERS: TeamMember[] = [
