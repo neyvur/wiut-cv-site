@@ -69,7 +69,11 @@ export const TECH_STACK = {
   libraries: ["OpenCV", "PyTorch", "Ultralytics", "FastAPI", "NumPy"],
 };
 
-export const DATASETS_NOTE = "[DATASETS]";
+export const DATASETS_NOTE =
+  "Two fixed-CCTV sample videos (60 s, 1280×720, 30 fps) were annotated manually " +
+  "for evaluation. YOLOv8n was used as a pretrained COCO detector — no custom " +
+  "training was required. Camera-specific zones (stop lines, crosswalks, solid " +
+  "lines, traffic lights) were annotated once per camera in zones.json.";
 
 /** Official event classes and their task definitions — do not reword. */
 export const EVENT_CLASSES: {
@@ -200,26 +204,44 @@ export const TIER_META: Record<
 
 export const PIPELINE_A = [
   { step: "Video", detail: "Fixed road-camera .mp4 input" },
-  { step: "Frame Sampling", detail: "[SAMPLING STRATEGY]" },
-  { step: "Object Detection", detail: "[DETECTOR]" },
-  { step: "Object Tracking", detail: "[TRACKER]" },
-  { step: "Trajectory Analysis", detail: "[RULES / MODEL]" },
-  { step: "Event Detection", detail: "[RULES / MODEL]" },
-  { step: "Temporal Segmentation", detail: "Start/end boundary refinement" },
+  {
+    step: "Frame Sampling",
+    detail: "Every frame processed at native FPS (30 fps)",
+  },
+  { step: "Object Detection", detail: "YOLOv8n · COCO (cars, buses, persons, lights)" },
+  { step: "Object Tracking", detail: "ByteTrack · stable IDs across frames" },
+  {
+    step: "Trajectory Analysis",
+    detail: "Per-track positions, velocity, heading, stop / motion state",
+  },
+  {
+    step: "Event Detection",
+    detail: "Rule-based engine + zone geometry (stop lines, crosswalks)",
+  },
+  {
+    step: "Temporal Segmentation",
+    detail: "Start/end boundary refinement, merge overlapping intervals",
+  },
   { step: "Results", detail: "[start_sec, end_sec, label] per event" },
 ];
 
 export const PIPELINE_B = [
   { step: "Frame", detail: "Current observed frame" },
   { step: "Track History", detail: "Recent object trajectories" },
-  { step: "Motion / Risk Signals", detail: "[ACCIDENT MODEL]" },
+  {
+    step: "Motion / Risk Signals",
+    detail: "Vehicle proximity, relative velocity, congestion density",
+  },
   { step: "Accident Risk", detail: "Probability score, 0–1" },
-  { step: "5-Second Horizon", detail: "Forward-looking risk estimate" },
+  {
+    step: "5-Second Horizon",
+    detail: "Forward-looking risk estimate (no future frames used)",
+  },
 ];
 
 export const EVALUATION = {
-  weightA: 0.7,
-  weightB: 0.3,
+  weightA: 0.7,  // Event detection
+  weightB: 0.3,  // Accident anticipation
   elimination: { model: 0.6, website: 0.25, code: 0.15 },
 };
 
@@ -247,13 +269,20 @@ export const REPO_STRUCTURE = [
   "README.md",
 ];
 
-export const NAV_ITEMS = [
-  { label: "Home", href: "#home" },
-  { label: "Live Demo", href: "#live-demo" },
-  { label: "Approach", href: "#approach" },
-  { label: "EDA", href: "#eda" },
-  { label: "Results", href: "#results" },
-  { label: "Team", href: "#team" },
+export const REPO_STRUCTURE = [
+  "solution.py             # detect_events() entry point",
+  "run_submission.py       # CLI wrapper",
+  "evaluate.py             # temporal-IoU evaluation",
+  "annotate_zones.py       # interactive zone annotation",
+  "visualize.py            # annotated video output",
+  "requirements.txt        # dependencies",
+  "weights/model.pt        # YOLOv8n",
+  "zones.json              # camera-specific zones",
+  "src/                    # detector, tracker, rules, events, risk",
+  "api/                    # FastAPI backend",
+  "notebooks/EDA.ipynb     # exploratory data analysis",
+  "predictions_samples.json",
+  "README.md",
 ];
 
 /** Number of sample videos to render placeholder analysis cards for. */
